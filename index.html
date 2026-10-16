@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bir Ali PreSchool Graduation Day — You're Invited</title>
+<meta name="description" content="You're invited to the Bir Ali PreSchool Graduation Day. A little graduate, a big new adventure!">
+<meta name="theme-color" content="#008080">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Press+Start+2P&family=Space+Mono:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+<style>
+:root{
+  --face:#c0c0c0;--navy:#000080;--sky:#1084d0;--teal:#008080;
+  --yellow:#F8F32B;--magenta:#FF3E9D;--turq:#36E0C0;--black:#080808;--paper:#F5F0E8;
+  --raised:inset -1px -1px #000,inset 1px 1px #fff,inset -2px -2px #808080,inset 2px 2px #dfdfdf;
+  --sunk:inset 1px 1px #808080,inset -1px -1px #fff,inset 2px 2px #000,inset -2px -2px #dfdfdf;
+  --f-px:"Press Start 2P","Courier New",monospace;
+  --f-ui:"VT323","Courier New",monospace;
+  --f-display:"Anton","Impact","Arial Narrow",sans-serif;
+  --f-mono:"Space Mono","Courier New",monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;color:#000;font:1.35rem/1.2 var(--f-ui);overflow-x:hidden;
+  background:var(--teal) radial-gradient(#00707099 1px,transparent 1.5px) 0 0/4px 4px;
+  padding-bottom:calc(56px + env(safe-area-inset-bottom))}
+body.is-locked{overflow:hidden}
+h1,h2,h3,p,dl,dd,figure{margin:0}
+:focus-visible{outline:2px dotted #000;outline-offset:2px}
+.skip-link{position:absolute;left:-999px;top:8px;background:var(--yellow);padding:.4rem .8rem;z-index:1000}
+.skip-link:focus{left:8px}
+
+/* ---------- INTRO (kekal) ---------- */
+.welcome-screen{position:fixed;inset:0;z-index:999;background:radial-gradient(ellipse at center,#1b0a2a 0%,#050505 100%);display:flex;align-items:center;justify-content:center;padding:1.5rem;transition:opacity .6s ease,visibility .6s ease}
+.welcome-screen.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.welcome-card{max-width:520px;width:100%;text-align:center;padding:clamp(2rem,6vw,3.5rem) 1.5rem;background:rgba(8,8,8,.92);border:3px solid var(--yellow);box-shadow:0 0 25px rgba(248,243,43,.4),inset 0 0 20px rgba(248,243,43,.1);color:var(--paper);font-family:var(--f-mono);font-size:1rem;line-height:1.6}
+.welcome-card__sub{font-size:clamp(.8rem,2vw,1rem);color:var(--turq);letter-spacing:.25em;font-weight:700;margin-bottom:.75rem}
+.welcome-card__title{font-family:var(--f-display);font-weight:400;font-size:clamp(2.5rem,8vw,4.5rem);line-height:.95;color:var(--yellow);text-shadow:3px 3px 0 var(--magenta);margin-bottom:1.25rem}
+.welcome-card__desc{font-size:clamp(.95rem,2.5vw,1.1rem);margin-bottom:2rem}
+.open-btn{width:100%;cursor:pointer;font-family:var(--f-display);font-size:1.3rem;letter-spacing:.08em;padding:.85rem 1.75rem;background:var(--yellow);color:var(--black);border:3px solid var(--black);box-shadow:5px 5px 0 var(--paper);transition:transform .12s,box-shadow .12s}
+.open-btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--paper)}
+.open-btn:active{transform:translate(5px,5px);box-shadow:none}
+.open-btn:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+
+/* ---------- DESKTOP ---------- */
+.desk{display:grid;grid-template-columns:5.6rem minmax(0,1fr);gap:1rem;width:min(1020px,100% - 1rem);margin:0 auto;padding:1rem 0 2rem}
+.icons{position:sticky;top:1rem;align-self:start;display:flex;flex-direction:column;gap:1rem}
+.ico{display:block;text-align:center;color:#fff;text-decoration:none;text-shadow:1px 1px #000;font-size:1.15rem;line-height:1}
+.ico i{display:grid;place-items:center;width:40px;height:40px;margin:0 auto .3rem;font:normal .95rem var(--f-px);color:#000;background:var(--c,var(--face));box-shadow:var(--raised)}
+.ico:hover span,.ico:focus-visible span{background:var(--navy);outline:1px dotted #ff0}
+.ico:focus-visible{outline:none}
+.stack{display:grid;gap:1.6rem;min-width:0;align-content:start}
+
+.win{background:var(--face);box-shadow:var(--raised);padding:3px;max-width:100%}
+.tb{display:flex;justify-content:space-between;align-items:center;background:linear-gradient(90deg,var(--navy),var(--sky));color:#fff;padding:3px 3px 3px 8px;font:.6rem/1 var(--f-px);letter-spacing:.04em}
+.tb b{display:flex;gap:2px}
+.tb b u{display:block;width:16px;height:14px;background:var(--face);box-shadow:var(--raised);color:#000;text-decoration:none;font:700 .6rem/14px var(--f-ui);text-align:center}
+.wb{padding:1rem}
+.win h2{font:400 clamp(.95rem,3.8vw,1.5rem)/1.5 var(--f-px);color:var(--navy);margin-bottom:.8rem}
+.sub{max-width:52ch}
+
+.btn{display:inline-block;font:inherit;font-size:1.45rem;color:#000;background:var(--face);border:0;padding:.45rem 1.3rem;box-shadow:var(--raised);text-decoration:none;text-align:center;cursor:pointer}
+.btn--def{box-shadow:0 0 0 1px #000,var(--raised)}
+.btn:active{box-shadow:var(--sunk);padding:.5rem 1.25rem .4rem 1.35rem}
+.btn[aria-disabled="true"]{color:#808080;text-shadow:1px 1px #fff;cursor:not-allowed}
+
+/* hero */
+.banner{background:linear-gradient(160deg,#00006e,var(--sky));box-shadow:var(--sunk);padding:1.4rem .8rem;text-align:center;overflow:hidden}
+.kick{color:var(--turq);letter-spacing:.3em;font-size:1.3rem;margin-bottom:.9rem}
+.hero__title{font:400 1rem/1.25 var(--f-px);text-transform:uppercase}
+.hero__title span{display:block}
+.t-bir{font-size:clamp(2rem,10vw,4.4rem);color:var(--yellow);text-shadow:4px 4px 0 var(--magenta);margin-bottom:.8rem}
+.t-pre{font-size:clamp(1.1rem,6.4vw,2.7rem);color:#fff;text-shadow:3px 3px 0 #000;margin-bottom:.8rem}
+.t-grad{font-size:clamp(.8rem,4.4vw,1.8rem);color:var(--turq);text-shadow:2px 2px 0 #000}
+.fields{display:grid;gap:.35rem;background:#fff;padding:.8rem;box-shadow:var(--sunk);margin:1rem 0}
+.fields>div{display:grid;grid-template-columns:5.2rem 1fr;gap:.6rem}
+.fields dt{color:var(--navy);font-weight:700}
+.fields dd{overflow-wrap:anywhere}
+.marq{overflow:hidden;white-space:nowrap;background:#000;color:var(--yellow);box-shadow:var(--sunk);padding:.55rem 0;font:.62rem/1 var(--f-px);margin-bottom:1.1rem}
+.marq span{display:inline-block;padding-left:100%;animation:m 13s linear infinite}
+@keyframes m{to{transform:translateX(-100%)}}
+
+/* countdown */
+.lcd{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;background:#000;box-shadow:var(--sunk);padding:.8rem .4rem;text-align:center}
+.lcd b{display:block;font:400 clamp(2.4rem,11vw,5rem)/1 var(--f-ui);color:#39ff6a;text-shadow:0 0 8px #39ff6a99}
+.lcd small{display:block;font-size:1.1rem;color:#9bdcae;letter-spacing:.08em}
+.countdown__msg{margin-top:1rem;font:.8rem/1.6 var(--f-px);color:var(--navy);text-align:center}
+.countdown.is-done .lcd,.countdown.is-pending .lcd{display:none}
+
+/* messages (cascade) */
+.msgwin{max-width:560px}
+.msg{display:flex;gap:1rem;align-items:center}
+.msg h3{font:400 clamp(.8rem,3.2vw,1rem)/1.6 var(--f-px)}
+.mi{flex:none;width:46px;height:46px;display:grid;place-items:center;font:700 2rem/1 var(--f-ui)}
+.mi--i{background:#0000b4;color:#fff;border-radius:50%}
+.mi--w{background:var(--yellow);clip-path:polygon(50% 0,100% 100%,0 100%);padding-top:.9rem}
+.mi--q{background:#fff;color:#0000b4;border:3px solid #0000b4;border-radius:50%}
+@media(min-width:760px){.m2{margin-left:4rem}.m3{margin-left:8rem}}
+
+/* properties */
+.grp{border:2px groove #fff;margin:0 0 1rem;padding:.4rem .9rem .8rem;min-width:0}
+.grp legend{padding:0 .4rem;color:var(--navy);font-weight:700}
+.big{font-size:clamp(1.8rem,5.5vw,2.5rem);line-height:1.05;text-transform:uppercase;overflow-wrap:anywhere}
+.grp p+p{margin-top:.3rem}
+
+/* rsvp wizard */
+.wiz{display:grid;grid-template-columns:9rem 1fr}
+.wiz__side{background:linear-gradient(0deg,var(--magenta),var(--navy));box-shadow:var(--sunk);display:grid;place-items:center;padding:1rem .5rem;color:var(--yellow);font:.8rem/1.8 var(--f-px);writing-mode:vertical-rl;text-orientation:mixed;letter-spacing:.1em}
+.wiz__main{padding:1rem 1rem .5rem 1.4rem}
+.wiz__main hr{border:0;border-top:2px groove #fff;margin:1.2rem 0}
+.wiz__main .btn{display:block;width:100%}
+@media(max-width:640px){.wiz{grid-template-columns:1fr}.wiz__side{writing-mode:horizontal-tb;padding:.8rem}.wiz__main{padding:1rem .2rem .2rem}}
+
+/* gallery */
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1.2rem 1rem;background:#fff;padding:1rem;box-shadow:var(--sunk)}
+.shot{text-align:center}
+.shot img{display:block;width:100%;aspect-ratio:1;object-fit:cover;background:#222;box-shadow:var(--sunk);border:2px solid #fff}
+.shot figcaption{display:inline-block;margin-top:.4rem;padding:0 .35rem;font-size:1.25rem}
+.shot:hover figcaption,.shot:focus-within figcaption{background:var(--navy);color:#fff}
+
+.bye{text-align:center}
+.bye p:first-child{font:.75rem/1.8 var(--f-px);color:var(--navy)}
+.bye p+p{margin-top:.6rem}
+
+/* taskbar */
+.bar{position:fixed;z-index:95;left:0;right:0;bottom:0;display:flex;gap:.4rem;align-items:center;background:var(--face);box-shadow:inset 0 2px #dfdfdf,inset 0 1px #fff;padding:6px 6px calc(6px + env(safe-area-inset-bottom));min-height:42px}
+.start{padding:.2rem .9rem;font-weight:700;flex:none}
+.bar.is-rsvp .start{display:none}
+.task{flex:1;min-width:0;box-shadow:var(--sunk);padding:.25rem .6rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tray{margin-left:auto;display:flex;gap:.4rem;align-items:center;box-shadow:var(--sunk);padding:.15rem .5rem}
+.mbtn{font:inherit;font-size:1.2rem;background:none;border:0;padding:.1rem .3rem;cursor:pointer;color:#000}
+.mbtn.is-on{color:#006400;font-weight:700}
+.bar time{min-width:3.4rem;text-align:right}
+@media(max-width:640px){.task{display:none}.icons{flex-direction:row;flex-wrap:wrap;justify-content:space-between}.ico{width:4.3rem}.desk{grid-template-columns:1fr;gap:1.2rem}.wb{padding:.8rem}.fields>div{grid-template-columns:1fr;gap:0}}
+
+.reveal{opacity:0;translate:0 14px;transition:opacity .45s steps(5),translate .45s steps(5)}
+.reveal.is-visible{opacity:1;translate:0 0}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;translate:0 0}.marq span{padding-left:0}}
+</style>
+</head>
+<body class="is-locked">
+
+<div class="welcome-screen" id="welcome-screen" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
+  <div class="welcome-card">
+    <p class="welcome-card__sub">SPECIAL INVITATION</p>
+    <h1 class="welcome-card__title" id="welcome-title">BIR ALI PRESCHOOL</h1>
+    <p class="welcome-card__desc">You're cordially invited to celebrate our little graduates' big milestone!</p>
+    <button type="button" class="open-btn" id="open-btn">OPEN INVITATION</button>
+  </div>
+</div>
+
+<a class="skip-link" href="#details">Skip to the details</a>
+
+<div class="desk">
+  <nav class="icons" aria-label="Sections">
+    <a class="ico" href="#top" data-scroll><i style="--c:#F8F32B">I</i><span>Invite</span></a>
+    <a class="ico" href="#countdown" data-scroll><i style="--c:#39ff6a">C</i><span>Clock</span></a>
+    <a class="ico" href="#details" data-scroll><i style="--c:#36E0C0">D</i><span>Details</span></a>
+    <a class="ico" href="#rsvp" data-scroll><i style="--c:#FF3E9D">R</i><span>RSVP</span></a>
+    <a class="ico" href="#gallery" data-scroll><i style="--c:#fff">P</i><span>Photos</span></a>
+  </nav>
+
+  <main class="stack">
+
+    <section class="win reveal" id="top" aria-labelledby="hero-title">
+      <div class="tb"><span>Invitation.exe</span><b aria-hidden="true"><u>_</u><u>□</u><u>x</u></b></div>
+      <div class="wb">
+        <div class="banner">
+          <p class="kick">YOU'RE INVITED TO</p>
+          <h1 class="hero__title" id="hero-title">
+            <span class="t-bir">Bir Ali</span>
+            <span class="t-pre">Preschool</span>
+            <span class="t-grad">Graduation Day</span>
+          </h1>
+        </div>
+        <dl class="fields">
+          <div><dt>DATE:</dt><dd data-config="dateText">21 November 2026</dd></div>
+          <div><dt>TIME:</dt><dd data-config="timeText">8.00 AM - 12.00 PM</dd></div>
+          <div><dt>VENUE:</dt><dd data-config="venue">Auditorium Permata Pintar</dd></div>
+          <div><dt>ADDRESS:</dt><dd data-config="address">UKM, Bangi</dd></div>
+        </dl>
+        <div class="marq" aria-hidden="true"><span>*** GROWING UP, THE 90S WAY! *** GROWING UP, THE 90S WAY! ***</span></div>
+        <a class="btn btn--def" href="#rsvp" data-scroll>CELEBRATE WITH US</a>
+      </div>
+    </section>
+
+    <section class="win countdown reveal" id="countdown" aria-labelledby="countdown-title">
+      <div class="tb"><span>Countdown.exe</span><b aria-hidden="true"><u>_</u><u>□</u><u>x</u></b></div>
+      <div class="wb">
+        <h2 id="countdown-title">THE BIG DAY COUNTDOWN</h2>
+        <div class="lcd" id="countdown-boxes" role="timer" aria-live="off">
+          <div><b id="cd-days">--</b><small>DAYS</small></div>
+          <div><b id="cd-hours">--</b><small>HOURS</small></div>
+          <div><b id="cd-minutes">--</b><small>MINUTES</small></div>
+          <div><b id="cd-seconds">--</b><small>SECONDS</small></div>
+        </div>
+        <p class="countdown__msg" id="countdown-msg" role="status" hidden></p>
+      </div>
+    </section>
+
+    <section id="celebrate" aria-labelledby="celebrate-title" style="display:grid;gap:1rem">
+      <div class="win msgwin reveal">
+        <div class="tb"><span>Step 1</span><b aria-hidden="true"><u>x</u></b></div>
+        <div class="wb">
+          <h2 id="celebrate-title">SMALL STEPS, BIG DREAMS</h2>
+          <p class="sub">Celebrating little milestones, wonderful memories, and the exciting adventures that lie ahead.</p>
+        </div>
+      </div>
+      <div class="win msgwin m2 reveal">
+        <div class="tb"><span>Step 2</span><b aria-hidden="true"><u>x</u></b></div>
+        <div class="wb msg"><span class="mi mi--i" aria-hidden="true">i</span><h3>A JOURNEY OF GROWTH</h3></div>
+      </div>
+      <div class="win msgwin m3 reveal">
+        <div class="tb"><span>Keepsake</span><b aria-hidden="true"><u>x</u></b></div>
+        <div class="wb msg"><span class="mi mi--w" aria-hidden="true">!</span><h3>MEMORIES TO CHERISH</h3></div>
+      </div>
+      <div class="win msgwin m2 reveal">
+        <div class="tb"><span>Next up</span><b aria-hidden="true"><u>x</u></b></div>
+        <div class="wb msg"><span class="mi mi--q" aria-hidden="true">?</span><h3>A FUTURE FULL OF DREAMS</h3></div>
+      </div>
+    </section>
+
+    <section class="win reveal" id="details" aria-labelledby="details-title">
+      <div class="tb"><span>Event Properties</span><b aria-hidden="true"><u>_</u><u>□</u><u>x</u></b></div>
+      <div class="wb">
+        <h2 id="details-title">THE DETAILS</h2>
+        <fieldset class="grp"><legend>Date</legend><p class="big" data-config="dateText">21 November 2026</p></fieldset>
+        <fieldset class="grp"><legend>Time</legend>
+          <p class="big" data-config="timeText">8.00 AM - 12.00 PM</p>
+          <p>Starts <b data-config="startTime">8.00 AM</b> / Ends <b data-config="endTime">12.00 PM</b></p>
+        </fieldset>
+        <fieldset class="grp"><legend>Venue</legend>
+          <p class="big" data-config="venue">Auditorium Permata Pintar</p>
+          <p data-config="address">UKM, Bangi</p>
+          <p style="margin-top:.8rem"><a class="btn btn--def" id="directions-btn" href="#" target="_blank" rel="noopener">GET DIRECTIONS</a></p>
+        </fieldset>
+        <fieldset class="grp" id="dress-panel" hidden><legend>Dress code</legend><p class="big" data-config="dressCode"></p></fieldset>
+        <fieldset class="grp" id="notes-panel" hidden><legend>Good to know</legend><p class="big" data-config="notes"></p></fieldset>
+      </div>
+    </section>
+
+    <section class="win reveal" id="rsvp" aria-labelledby="rsvp-title">
+      <div class="tb"><span>RSVP Wizard</span><b aria-hidden="true"><u>x</u></b></div>
+      <div class="wiz">
+        <div class="wiz__side" aria-hidden="true">SEE YOU THERE</div>
+        <div class="wiz__main">
+          <h2 id="rsvp-title">RSVP</h2>
+          <p><b>Let us know if you'll be there!</b></p>
+          <p class="sub" style="margin-top:.5rem">Your presence will make this special milestone even more memorable.</p>
+          <hr>
+          <p style="margin-bottom:1rem">Please open the attendance confirmation form (Google Form) to reply.</p>
+          <a class="btn btn--def" href="ENTER_YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" rel="noopener noreferrer">FILL OUT RSVP FORM</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="win reveal" id="gallery" aria-labelledby="gallery-title">
+      <div class="tb"><span>My Pictures</span><b aria-hidden="true"><u>_</u><u>□</u><u>x</u></b></div>
+      <div class="wb">
+        <h2 id="gallery-title">LITTLE MOMENTS, BIG MEMORIES</h2>
+        <div class="shots" id="polaroids"></div>
+      </div>
+    </section>
+
+    <footer class="win bye reveal">
+      <div class="tb"><span>Goodbye.exe</span><b aria-hidden="true"><u>x</u></b></div>
+      <div class="wb">
+        <p>THANK YOU FOR BEING PART OF OUR JOURNEY!</p>
+        <p>BIR ALI PRESCHOOL GRADUATION DAY</p>
+        <p>Cheers to new beginnings!</p>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<div class="bar" id="dock">
+  <a class="btn btn--def start" href="#rsvp" data-scroll>RSVP NOW</a>
+  <span class="task">Bir Ali Invitation</span>
+  <div class="tray">
+    <button type="button" class="mbtn" id="music-btn" aria-pressed="false" aria-label="Toggle background music"><span id="music-label">♪ MUSIC OFF</span></button>
+    <time id="clock"></time>
+  </div>
+</div>
+
+<script>
+const CONFIG = {
+  eventDate: "2026-11-21T08:00:00+08:00",
+  dateText: "21 November 2026",
+  timeText: "8.00 AM - 12.00 PM",
+  startTime: "8.00 AM",
+  endTime: "12.00 PM",
+  venue: "Auditorium Permata Pintar",
+  address: "UKM, Bangi",
+  rsvpDeadline: "",
+  dressCode: "",
+  notes: "",
+  musicSrc: "",
+  gallery: [
+    { src: "", caption: "First day of school", alt: "Placeholder photo: first day of school", color: "#FF3E9D" },
+    { src: "", caption: "Learning together",   alt: "Placeholder photo: children learning together", color: "#36E0C0" },
+    { src: "", caption: "Art time!",           alt: "Placeholder photo: art time", color: "#F8F32B" },
+    { src: "", caption: "Ready to graduate!",  alt: "Placeholder photo: ready to graduate", color: "#8B5CF6" }
+  ]
+};
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const pad = (n) => String(n).padStart(2, "0");
+
+function applyConfig() {
+  $$("[data-config]").forEach((el) => {
+    const v = CONFIG[el.dataset.config];
+    if (v) el.textContent = v;
+  });
+  $("#dress-panel").hidden = !CONFIG.dressCode;
+  $("#notes-panel").hidden = !CONFIG.notes;
+  const btn = $("#directions-btn");
+  if (CONFIG.address) {
+    btn.href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.venue + " " + CONFIG.address);
+  } else {
+    btn.removeAttribute("href");
+    btn.setAttribute("aria-disabled", "true");
+    btn.textContent = "ADDRESS COMING SOON";
+    btn.addEventListener("click", (e) => e.preventDefault());
+  }
+}
+
+function initCountdown() {
+  const section = $("#countdown"), msg = $("#countdown-msg");
+  const els = { d: $("#cd-days"), h: $("#cd-hours"), m: $("#cd-minutes"), s: $("#cd-seconds") };
+  const target = CONFIG.eventDate ? new Date(CONFIG.eventDate).getTime() : NaN;
+  if (Number.isNaN(target)) {
+    section.classList.add("is-pending");
+    msg.hidden = false; msg.textContent = "COUNTDOWN COMING SOON";
+    return;
+  }
+  let timer;
+  function tick() {
+    const diff = target - Date.now();
+    if (diff <= 0) {
+      clearInterval(timer);
+      section.classList.add("is-done");
+      msg.hidden = false; msg.textContent = "TODAY IS THE BIG DAY!";
+      return;
+    }
+    const t = Math.floor(diff / 1000);
+    els.d.textContent = pad(Math.floor(t / 86400));
+    els.h.textContent = pad(Math.floor((t % 86400) / 3600));
+    els.m.textContent = pad(Math.floor((t % 3600) / 60));
+    els.s.textContent = pad(t % 60);
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+}
+
+function initClock() {
+  const el = $("#clock");
+  const up = () => { el.textContent = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }); };
+  up(); setInterval(up, 15000);
+}
+
+function initScroll() {
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  $$("[data-scroll]").forEach((a) =>
+    a.addEventListener("click", (e) => {
+      const target = $(a.getAttribute("href"));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+      target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
+    })
+  );
+}
+
+function initReveal() {
+  const items = $$(".reveal");
+  if (!("IntersectionObserver" in window)) { items.forEach((i) => i.classList.add("is-visible")); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("is-visible"); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  items.forEach((i) => io.observe(i));
+}
+
+function placeholderSrc(color) {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400"><rect width="400" height="400" fill="#101014"/><path d="M0 400L400 0v80L80 400Z" fill="${color}" opacity=".28"/><circle cx="200" cy="170" r="70" fill="${color}"/><path d="M120 300Q200 220 280 300V400H120Z" fill="${color}"/><text x="200" y="385" text-anchor="middle" font-family="monospace" font-size="20" fill="#F5F0E8">PHOTO COMING SOON</text></svg>`;
+  return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+}
+
+function buildGallery() {
+  const box = $("#polaroids");
+  CONFIG.gallery.forEach((p) => {
+    const fig = document.createElement("figure");
+    fig.className = "shot";
+    fig.tabIndex = 0;
+    const img = document.createElement("img");
+    img.src = p.src || placeholderSrc(p.color);
+    img.alt = p.alt;
+    img.loading = "lazy";
+    const cap = document.createElement("figcaption");
+    cap.textContent = p.caption;
+    fig.append(img, cap);
+    box.appendChild(fig);
+  });
+}
+
+function initMusicEngine() {
+  const btn = $("#music-btn"), label = $("#music-label");
+  const openBtn = $("#open-btn"), welcomeScreen = $("#welcome-screen");
+  const BPM = 122, STEP = 60 / BPM / 4;
+  const mtof = (m) => 440 * Math.pow(2, (m - 69) / 12);
+  const CHORDS = [
+    { root: 45, tones: [69, 72, 76] },
+    { root: 41, tones: [65, 69, 72] },
+    { root: 48, tones: [67, 72, 76] },
+    { root: 43, tones: [67, 71, 74] }
+  ];
+  const ARP = [0, 1, 2, 1];
+  let ctx, master, noiseBuf, timer, step = 0, nextTime = 0, playing = false, wasPlaying = false, audioEl = null;
+
+  const setUI = (on) => {
+    btn.setAttribute("aria-pressed", String(on));
+    btn.classList.toggle("is-on", on);
+    label.textContent = on ? "♪ MUSIC ON" : "♪ MUSIC OFF";
+  };
+
+  function tone(type, freq, t, dur, vol, slideTo) {
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = type; o.frequency.setValueAtTime(freq, t);
+    if (slideTo) o.frequency.exponentialRampToValueAtTime(slideTo, t + dur);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(vol, t + 0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o.connect(g); g.connect(master);
+    o.start(t); o.stop(t + dur + 0.03);
+  }
+  function noise(t, dur, vol, hp) {
+    const s = ctx.createBufferSource(), f = ctx.createBiquadFilter(), g = ctx.createGain();
+    s.buffer = noiseBuf; f.type = "highpass"; f.frequency.value = hp;
+    g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    s.connect(f); f.connect(g); g.connect(master);
+    s.start(t); s.stop(t + dur + 0.03);
+  }
+  function schedule(i, t) {
+    const c = CHORDS[Math.floor(i / 16) % 4], s = i % 16;
+    if (s % 4 === 0) tone("sine", 150, t, 0.2, 0.9, 45);
+    if (s === 4 || s === 12) noise(t, 0.14, 0.35, 1500);
+    if (s % 4 === 2) { noise(t, 0.05, 0.16, 7000); tone("sawtooth", mtof(c.root), t, STEP * 1.8, 0.26); }
+    if (s % 2 === 0) {
+      const note = c.tones[ARP[(s / 2) % 4]] + ((Math.floor(i / 16) % 4) >= 2 && s % 8 === 0 ? 12 : 0);
+      tone("square", mtof(note), t, STEP * 1.6, 0.06);
+    }
+  }
+  function scheduler() {
+    while (nextTime < ctx.currentTime + 0.15) { schedule(step, nextTime); nextTime += STEP; step = (step + 1) % 64; }
+  }
+
+  async function start() {
+    try {
+      if (CONFIG.musicSrc) {
+        audioEl = audioEl || Object.assign(new Audio(CONFIG.musicSrc), { loop: true, volume: 0.5 });
+        await audioEl.play();
+      } else {
+        if (!ctx) {
+          ctx = new (window.AudioContext || window.webkitAudioContext)();
+          master = ctx.createGain(); master.gain.value = 0.3; master.connect(ctx.destination);
+          noiseBuf = ctx.createBuffer(1, ctx.sampleRate * 0.5, ctx.sampleRate);
+          const d = noiseBuf.getChannelData(0);
+          for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+        }
+        await ctx.resume();
+        step = 0; nextTime = ctx.currentTime + 0.05;
+        clearInterval(timer); timer = setInterval(scheduler, 25);
+      }
+      playing = true; setUI(true);
+    } catch (err) {
+      console.error("Music playback failed:", err);
+      playing = false; setUI(false);
+    }
+  }
+  function stop() {
+    clearInterval(timer);
+    if (audioEl) audioEl.pause();
+    if (ctx) ctx.suspend();
+    playing = false; setUI(false);
+  }
+
+  openBtn.addEventListener("click", () => {
+    welcomeScreen.classList.add("is-hidden");
+    document.body.classList.remove("is-locked");
+    start();
+  });
+  btn.addEventListener("click", () => (playing ? stop() : start()));
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) { wasPlaying = playing; if (playing) stop(); }
+    else if (wasPlaying) { wasPlaying = false; start(); }
+  });
+
+  const dock = $("#dock"), rsvp = $("#rsvp");
+  if ("IntersectionObserver" in window && rsvp) {
+    new IntersectionObserver(([e]) => dock.classList.toggle("is-rsvp", e.isIntersecting), { threshold: 0.15 }).observe(rsvp);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  applyConfig();
+  initCountdown();
+  initClock();
+  initScroll();
+  buildGallery();
+  initReveal();
+  initMusicEngine();
+});
+</script>
+</body>
+</html>
